@@ -7,14 +7,83 @@ body {
     background: url(../img/sacola.png) no-repeat top right;
     font-size: 14px;
     padding-right: 35px;
+    padding-top: 8px;
+    position: absolute;
+    right: 0;
     text-align: right;
+    top: 0;
     width: 140px;
+}
+
+.menu-opcoes {
+    bottom: 0;
+    position: absolute;
+    right: 0;
 }
 
 .menu-opcoes ul {
     font-size: 15px;
 }
 
+.menu-opcoes ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
 .menu-opcoes a {
     color: #036;
+}
+
+.container {
+    margin: 0 auto;
+    width: 940px;
+}
+
+header {
+    position: relative;
+}
+
+.busca,
+.menu-departamentos {
+    background-color: #dcdcdc;
+    float: left;
+    font-weight: bold;
+    margin-right: 10px;
+    text-transform: uppercase;
+    width: 230px;
+}
+
+.busca h2,
+.busca form,
+.menu-departamentos h2 {
+    margin: 10px;
+}
+
+.busca input [type=search] {
+    width: 170px;
+}
+
+.busca input {
+    vertical-align: middle;
+}
+
+.menu-departamentos li {
+    background-color: white;
+    margin-bottom: 1px;
+    padding: 5px 10px;
+}
+
+.menu-departamentos a {
+    color: #333;
+    text-decoration: none;
+}
+
+.menu-departamentos {
+    clear: left;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+.destaques {
+    margin-top: 10px;
 }
