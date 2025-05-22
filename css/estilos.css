@@ -87,3 +87,84 @@ header {
 .destaques {
     margin-top: 10px;
 }
+
+.painel {
+    margin: 10px 0;
+    padding: 10px;
+    width: 445px;
+}
+
+.painel a {
+    color: #333;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.painel li {
+    display: inline-block;
+    margin: 2px;
+    padding-bottom: 10px;
+    vertical-align: top;
+    width: 140px;
+}
+
+.painel h2 {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.novidades {
+    float: left;
+    background-color: #f5dcdc;
+}
+
+.mais-vendidos {
+    float: right;
+    background-color: #dcdcf5;
+}
+
+footer {
+    background-image: url(../img/fundo-rodape.png);
+    clear: both;
+    padding: 20px 0;
+}
+
+footer .container {
+    position: relative;
+}
+
+.social {
+    position: absolute;
+    right: 0;
+    top: 12px;
+}
+
+.social li {
+    float: left;
+    margin-left: 25px;
+}
+
+.social a {
+    /* tamanho da imagem */
+    height: 32px;
+    width: 32px;
+
+    /* image replacement */
+    display: block;
+    text-indent: -9999px;
+}
+
+.social a[href*="facebook"] {
+    background-image: url(../img/facebook.png);
+}
+
+.social a[href*="x.com"] {
+    background-image: url(../img/twitter.png);
+}
+
+.social a[href*="plus.google.com"] {
+    background-image: url(../img/googleplus.png);
+}
