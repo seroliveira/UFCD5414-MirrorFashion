@@ -39,7 +39,17 @@ include("cabecalho.php");
 		</nav>
 	</section> <!--fim .departamentos-->
 
-	<img src="img/destaque-home.png" alt="Promoção: Big City Night">
+	<div class="img-destaques">
+		<img src="img/destaque-home.png" alt="Promoção: Big City Night">
+		<button id="toggle">
+			<svg id="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white">
+				<!-- Ícone de pausa inicial -->
+				<rect x="5" y="4" width="4" height="16"></rect>
+				<rect x="15" y="4" width="4" height="16"></rect>
+			</svg>
+		</button>
+	</div>
+
 
 </section> <!--fim .container .destaques-->
 
@@ -159,6 +169,40 @@ include("cabecalho.php");
 	</div>
 
 </section>
+
+<script>
+	var banners = ["img/destaque-home.png", "img/destaque-home-2.png"];
+	var bannerAtual = 0;
+	var intervaloId = setInterval(trocaBanner, 4000);
+	var pausado = false;
+
+	function trocaBanner() {
+		bannerAtual = (bannerAtual + 1) % 2;
+		document.querySelector(".img-destaques img").src = banners[bannerAtual];
+	}
+
+	document.getElementById("toggle").addEventListener("click", function() {
+		var icon = document.getElementById("icon");
+
+		if (!pausado) {
+			clearInterval(intervaloId);
+
+			// Muda para ícone de play
+			icon.innerHTML = `<polygon points="5,4 19,12 5,20" fill="white"/>`;
+
+		} else {
+			intervaloId = setInterval(trocaBanner, 4000);
+
+			// Muda para ícone de pausa
+			icon.innerHTML = `
+        <rect x="5" y="4" width="4" height="16" fill="white"></rect>
+        <rect x="15" y="4" width="4" height="16" fill="white"></rect>
+      `;
+		}
+
+		pausado = !pausado;
+	});
+</script>
 
 <!--rodapé-->
 <?php include("rodape.php"); ?>

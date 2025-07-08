@@ -7,18 +7,18 @@ body {
     background: url(../img/sacola.png) no-repeat top right;
     font-size: 14px;
     padding-right: 35px;
-    padding-top: 8px;
-    position: absolute;
-    right: 0;
     text-align: right;
-    top: 0;
     width: 140px;
+    top: 0;
+    right: 0;
+    position: absolute;
+    padding-top: 8px;
 }
 
 .menu-opcoes {
-    bottom: 0;
     position: absolute;
     right: 0;
+    bottom: 0;
 }
 
 .menu-opcoes ul {
@@ -43,8 +43,8 @@ body {
 }
 
 .container {
-    margin: 0 auto;
     width: 940px;
+    margin: 0 auto;
 }
 
 header {
@@ -53,26 +53,18 @@ header {
 
 .busca,
 .menu-departamentos {
-    background-color: #dcdcdc;
-    float: left;
     font-weight: bold;
-    margin-right: 10px;
+    background-color: #dcdcdc;
     text-transform: uppercase;
+    margin-right: 10px;
     width: 230px;
+    float: left;
 }
 
 .busca h2,
 .busca form,
 .menu-departamentos h2 {
     margin: 10px;
-}
-
-.busca input[type=search] {
-    width: 170px;
-}
-
-.busca input {
-    vertical-align: middle;
 }
 
 .menu-departamentos li {
@@ -86,6 +78,14 @@ header {
     text-decoration: none;
 }
 
+.busca input[type=search] {
+    width: 170px;
+}
+
+.busca input {
+    vertical-align: middle;
+}
+
 .menu-departamentos {
     clear: left;
     margin-top: 10px;
@@ -96,25 +96,46 @@ header {
     margin-top: 10px;
 }
 
+.img-destaques {
+    position: relative;
+    display: inline-block;
+}
+
+.img-destaques img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+#toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 6px;
+}
+
+#toggle svg {
+    display: block;
+}
+
+
 .painel {
     margin: 10px 0;
     padding: 10px;
     width: 445px;
 }
 
-.painel a {
-    color: #333;
-    font-size: 14px;
-    text-align: center;
-    text-decoration: none;
-}
-
 .painel li {
     display: inline-block;
-    margin: 2px;
-    padding-bottom: 10px;
     vertical-align: top;
     width: 140px;
+    margin: 2px;
+    padding-bottom: 10px;
     transition: 0.7s ease-out;
 }
 
@@ -129,13 +150,6 @@ header {
     transform: scale(1.2) rotate(5deg);
 }
 
-.painel h2 {
-    font-size: 24px;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-}
-
 .novidades {
     float: left;
     background-color: #f5dcdc;
@@ -144,6 +158,26 @@ header {
 .mais-vendidos {
     float: right;
     background-color: #dcdcf5;
+}
+
+.painel h2 {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.painel a {
+    color: #333;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.painel h2::before {
+    content: '\2756';
+    padding-right: 5px;
+    opacity: 0.4;
 }
 
 footer {
@@ -159,8 +193,7 @@ footer .container {
 .social {
     position: absolute;
     right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 12px;
 }
 
 .social li {
@@ -178,7 +211,7 @@ footer .container {
     text-indent: -9999px;
 }
 
-.social a[href*="facebook"] {
+.social a[href*="facebook.com"] {
     background-image: url(../img/facebook.png);
 }
 
@@ -207,108 +240,128 @@ footer .container {
     padding-right: 3px;
 }
 
-.painel h2::before {
-    content: '\2756';
-    padding-right: 5px;
-    opacity: 0.4;
+/* estilos para a página sobre.php */
+.titulosobre {
+    background-image: url(../img/sobre-background.jpg);
+    padding: 10px;
+    margin: 15px 0;
+    font-size: 30px;
+    font-weight: bold;
 }
 
-/* Sobre */
-h2 #historia {
-    border-bottom: 2px solid #333;
-    margin-top: 30px;
-}
-
-article p {
-    padding: 10px 45px;
+#sobre p {
+    padding: 0 45px;
     text-indent: 15px;
 }
 
-#centro-distribuicao {
-    margin: 0 auto;
-    padding: 15px;
-    text-align: center;
-    background-color: #f2eded;
-    border: 1px solid #ccc;
-    max-width: 550px;
-}
-
-#centro-distribuicao img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-#familia-pelho {
-    background-color: #f2eded;
-    border: 1px solid #ccc;
-    margin: 10px 30px;
-    padding: 15px;
-    text-align: center;
-    float: right;
-}
-
-#centro-distribuicao figcaption,
-#familia-pelho figcaption {
-    font-style: italic;
-    margin-top: 10px;
-}
-
-#diferenciais+ul {
-    list-style-type: disc;
-    padding: 10px 45px;
+#sobre .titulosobre+p {
+    text-indent: 0;
 }
 
 @media (max-width: 939px) {
-    figure {
-        margin: 15px auto;
-        padding: 15px;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    figcaption {
-        font-size: 18px;
-    }
 
     .container {
         width: 96%;
-        margin: 0 auto;
-        padding: 0;
-        font-size: 20px;
     }
 
-    header img {
-        display: block;
-        margin: 0 auto;
-        max-width: 50%;
-        height: auto;
-        padding-bottom: 10px;
-    }
-
-    h1 {
+    header h1 {
         text-align: center;
     }
 
-    #centro-distribuicao {
-        max-width: 100%;
-        width: 100%;
-        margin: 0 auto;
-        box-sizing: border-box;
+    header h1 img {
+        max-width: 50%;
     }
 
-    #familia-pelho {
-        float: none;
-        width: 100%;
-        box-sizing: border-box;
-        margin: 0 auto;
+    .sacola {
+        display: none;
     }
 
-    #centro-distribuicao img,
-    #familia-pelho img {
+    .menu-opcoes {
+        position: static;
+        text-align: center;
+    }
+
+    .menu-opcoes ul li {
+        display: inline-block;
+        margin: 5px;
+    }
+
+    .busca,
+    .menu-departamentos,
+    .destaques img {
         width: 100%;
+        margin-right: 0;
+    }
+
+    .painel {
+        width: auto;
+    }
+
+    .painel li {
+        width: 30%;
+    }
+
+    .painel img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 939px) and (min-width: 480px) {
+    header h1 {
+        margin: 5px 0;
+    }
+
+    .menu-departamentos {
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+
+    .menu-departamentos nav>ul {
+        /* -webkit-column-count: 2;
+        -moz-column-count: 2; */
+        column-count: 2;
+    }
+}
+
+@media (max-width: 939px) and (min-width: 720px) {
+    header h1 {
+        text-align: left;
+    }
+
+    .menu-opcoes {
+        position: absolute;
+    }
+
+    .sacola {
+        display: block;
+    }
+
+    .painel li {
+        width: 15%;
+    }
+
+    .busca,
+    .menu-departamentos {
+        margin-right: 1%;
+        width: 30%;
+    }
+
+    .menu-departamentos nav>ul {
+        column-count: 1;
+    }
+
+    .img-destaques {
+        display: inline-block;
+        position: relative;
+        width: auto;
+        float: left;
+        margin: 0;
+        padding: 0;
+    }
+
+    .img-destaques img {
+        display: block;
         max-width: 100%;
         height: auto;
-        display: block;
     }
 }

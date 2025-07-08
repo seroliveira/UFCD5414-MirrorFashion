@@ -9,7 +9,10 @@ include("cabecalho.php"); ?>
             <h2>Fuzzy Cardigan</h2>
             <p>por apenas R$ 129,00</p>
 
-            <form action="">
+            <form action="checkout.php" method="post">
+                <input type="hidden" name="id" value="2">
+                <input type="hidden" name="nome" value="Fuzzy Cardigan">
+                <input type="hidden" name="preco" value="R$ 129,00">
                 <fieldset class="cores">
                     <legend>Escolha a cor:</legend>
 
@@ -42,7 +45,9 @@ include("cabecalho.php"); ?>
         <div class="detalhes">
             <h3>Detalhes do produto</h3>
 
-            <p>Esse é o melhor casaco de Cardigã que você já viu. Excelente material italiano com estampa desenhada pelos artesãos da comunidade de Krotor nas ilhas gregas. Compre já e receba hoje mesmo pela nossa entrega a jato.</p>
+            <p>Esse é o melhor casaco de Cardigã que você já viu. Excelente material italiano com estampa desenhada
+                pelos artesãos da comunidade de Krotor nas ilhas gregas. Compre já e receba hoje mesmo pela nossa
+                entrega a jato.</p>
 
             <table>
                 <thead>
