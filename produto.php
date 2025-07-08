@@ -36,6 +36,7 @@ include("cabecalho.php"); ?>
                     <legend>Escolha o tamanho:</legend>
 
                     <input type="range" name="tamanho" id="tamanho" min="36" max="46" value="42" step="2">
+                    <output for="tamanho" name="valortamanho">42</output>
                 </fieldset>
 
                 <input type="submit" value="Comprar" class="comprar">
@@ -79,5 +80,8 @@ include("cabecalho.php"); ?>
         </div>
     </div>
 </div>
+
+<script src="js/jquery.js"></script>
+<script src="js/produto.js"></script>
 
 <?php include("rodape.php"); ?>

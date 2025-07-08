@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 body {
     color: #333;
-    font-family: 'Lucida Sans Unicode', sans-serif;
+    font-family: 'PT Sans', sans-serif;
 }
 
 .sacola {
@@ -130,6 +132,61 @@ header {
     width: 445px;
 }
 
+.painel button {
+    display: none;
+
+    /* posicionamento */
+    float: right;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    position: relative;
+
+    /* estilos */
+    background-color: #333;
+    border: 0;
+    border-radius: 4px;
+    box-shadow: 1px 1px 3px rgba(30, 30, 30, 0.5);
+    color: white;
+    font-size: 1em;
+    text-decoration: none;
+    text-shadow: 1px 0 1px black;
+
+    /* animação */
+    transition: 0.3s;
+}
+
+.painel button::after {
+    /* elemento vazio */
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+
+    /* triângulo */
+    border-top: 10px solid #333;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+
+    /* posicionamento */
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+
+    /* animação */
+    transition: 0.3s;
+}
+
+.painel button:hover::after {
+    border-top-color: #393939;
+}
+
+.painel button:hover {
+    background-color: #393939;
+    box-shadow: 1px 0 20px rgba(200, 200, 120, 0.9);
+}
+
 .painel li {
     display: inline-block;
     vertical-align: top;
@@ -150,6 +207,25 @@ header {
     transform: scale(1.2) rotate(5deg);
 }
 
+.painel-compacto li:nth-child(n+7) {
+    display: none;
+}
+
+.painel-compacto button {
+    display: block;
+}
+
+.tamanhos output {
+    display: inline-block;
+    height: 44px;
+    width: 44px;
+    line-height: 44px;
+    text-align: center;
+    border: 3px solid #666;
+    border-radius: 50%;
+    color: #555;
+}
+
 .novidades {
     float: left;
     background-color: #f5dcdc;
@@ -161,6 +237,7 @@ header {
 }
 
 .painel h2 {
+    font-family: 'Bad Script', sans-serif;
     font-size: 24px;
     font-weight: bold;
     text-transform: uppercase;

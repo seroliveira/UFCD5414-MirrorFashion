@@ -109,7 +109,56 @@ include("cabecalho.php");
 						</figure>
 					</a>
 				</li>
+				<li>
+					<a href="produto.php">
+						<figure>
+							<img src="img/produtos/miniatura1.png" alt="Produto1">
+							<figcaption>Fuzz Cardigan por R$ 129.90</figcaption>
+						</figure>
+					</a>
+				</li>
+				<li>
+					<a href="produto.php">
+						<figure>
+							<img src="img/produtos/miniatura2.png" alt="Produto2">
+							<figcaption>Fuzz Cardigan por R$ 129.90</figcaption>
+						</figure>
+					</a>
+				</li>
+				<li>
+					<a href="produto.php">
+						<figure>
+							<img src="img/produtos/miniatura3.png" alt="Produto3">
+							<figcaption>Fuzz Cardigan por R$ 129.90</figcaption>
+						</figure>
+					</a>
+				</li>
+				<li>
+					<a href="produto.php">
+						<figure>
+							<img src="img/produtos/miniatura4.png" alt="Produto4">
+							<figcaption>Fuzz Cardigan por R$ 129.90</figcaption>
+						</figure>
+					</a>
+				</li>
+				<li>
+					<a href="produto.php">
+						<figure>
+							<img src="img/produtos/miniatura5.png" alt="Produto5">
+							<figcaption>Fuzz Cardigan por R$ 129.90</figcaption>
+						</figure>
+					</a>
+				</li>
+				<li>
+					<a href="produto.php">
+						<figure>
+							<img src="img/produtos/miniatura6.png" alt="Produto6">
+							<figcaption>Fuzz Cardigan por R$ 129.90</figcaption>
+						</figure>
+					</a>
+				</li>
 			</ol>
+			<button type="button">Mostrar mais</button>
 		</section>
 
 		<section class="painel mais-vendidos">
@@ -163,46 +212,63 @@ include("cabecalho.php");
 						</figure>
 					</a>
 				</li>
-
+				<li>
+					<a href="produto.php">
+						<figure>
+							<img src="img/produtos/miniatura7.png" alt="Produto7">
+							<figcaption>Fuzz Cardigan por R$ 129.90</figcaption>
+						</figure>
+					</a>
+				</li>
+				<li>
+					<a href="produto.php">
+						<figure>
+							<img src="img/produtos/miniatura8.png" alt="Produto8">
+							<figcaption>Fuzz Cardigan por R$ 129.90</figcaption>
+						</figure>
+					</a>
+				</li>
+				<li>
+					<a href="produto.php">
+						<figure>
+							<img src="img/produtos/miniatura9.png" alt="Produto9">
+							<figcaption>Fuzz Cardigan por R$ 129.90</figcaption>
+						</figure>
+					</a>
+				</li>
+				<li>
+					<a href="produto.php">
+						<figure>
+							<img src="img/produtos/miniatura10.png" alt="Produto10">
+							<figcaption>Fuzz Cardigan por R$ 129.90</figcaption>
+						</figure>
+					</a>
+				</li>
+				<li>
+					<a href="produto.php">
+						<figure>
+							<img src="img/produtos/miniatura11.png" alt="Produto11">
+							<figcaption>Fuzz Cardigan por R$ 129.90</figcaption>
+						</figure>
+					</a>
+				</li>
+				<li>
+					<a href="produto.php">
+						<figure>
+							<img src="img/produtos/miniatura12.png" alt="Produto12">
+							<figcaption>Fuzz Cardigan por R$ 129.90</figcaption>
+						</figure>
+					</a>
+				</li>
 			</ol>
+			<button type="button">Mostrar mais</button>
 		</section>
 	</div>
 
 </section>
 
-<script>
-	var banners = ["img/destaque-home.png", "img/destaque-home-2.png"];
-	var bannerAtual = 0;
-	var intervaloId = setInterval(trocaBanner, 4000);
-	var pausado = false;
-
-	function trocaBanner() {
-		bannerAtual = (bannerAtual + 1) % 2;
-		document.querySelector(".img-destaques img").src = banners[bannerAtual];
-	}
-
-	document.getElementById("toggle").addEventListener("click", function() {
-		var icon = document.getElementById("icon");
-
-		if (!pausado) {
-			clearInterval(intervaloId);
-
-			// Muda para ícone de play
-			icon.innerHTML = `<polygon points="5,4 19,12 5,20" fill="white"/>`;
-
-		} else {
-			intervaloId = setInterval(trocaBanner, 4000);
-
-			// Muda para ícone de pausa
-			icon.innerHTML = `
-        <rect x="5" y="4" width="4" height="16" fill="white"></rect>
-        <rect x="15" y="4" width="4" height="16" fill="white"></rect>
-      `;
-		}
-
-		pausado = !pausado;
-	});
-</script>
+<script src="js/jquery.js"></script>
+<script src="js/home.js"></script>
 
 <!--rodapé-->
 <?php include("rodape.php"); ?>
