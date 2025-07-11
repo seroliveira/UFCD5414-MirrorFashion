@@ -3,8 +3,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
 
 
+// Variáveis
+@cor-principal: #333;
+@cor-hover: #393939;
+@cor-texto: white;
+@raio-borda: 4px;
+@sombra-botao: 1px 1px 3px rgba(30, 30, 30, 0.5);
+@sombra-hover: 1px 0 20px rgba(200, 200, 120, 0.9);
+@sombra-li: 0 0 5px @cor-principal;
+@espacamento: 10px;
+
+// Transição
+.transicao(@propriedades, @tempo, @ease: ease) {
+  -webkit-transition: @propriedades @tempo @ease;
+  -moz-transition: @propriedades @tempo @ease;
+  -ms-transition: @propriedades @tempo @ease;
+  -o-transition: @propriedades @tempo @ease;
+  transition: @propriedades @tempo @ease;
+}
+
 body {
-    color: #333;
+    color: @cor-principal;
     font-family: 'PT Sans', sans-serif;
 }
 
@@ -79,7 +98,7 @@ header {
 }
 
 .menu-departamentos a {
-    color: #333;
+    color: @cor-principal;
     text-decoration: none;
 }
 
@@ -128,94 +147,112 @@ header {
     display: block;
 }
 
-
+// Painel
 .painel {
-    margin: 10px 0;
-    padding: 10px;
+    margin: @espacamento 0;
+    padding: @espacamento;
     width: 445px;
-}
 
-.painel button {
-    display: none;
+    h2 {
+        font-family: 'Bad Script', sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: @espacamento;
 
-    /* posicionamento */
-    float: right;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    padding: 10px;
-    position: relative;
+        &::before {
+            content: '\2756';
+            padding-right: 5px;
+            opacity: 0.4;
+        }
+    }
 
-    /* estilos */
-    background-color: #333;
-    border: 0;
-    border-radius: 4px;
-    box-shadow: 1px 1px 3px rgba(30, 30, 30, 0.5);
-    color: white;
-    font-size: 1em;
-    text-decoration: none;
-    text-shadow: 1px 0 1px black;
+    a {
+        color: @cor-principal;
+        font-size: 14px;
+        text-align: center;
+        text-decoration: none;
+    }
 
-    /* animação */
-    transition: 0.3s;
-}
+    button {
+        display: none;
 
-.painel button::after {
-    /* elemento vazio */
-    content: '';
-    display: block;
-    height: 0;
-    width: 0;
+        // Posicionamento
+        float: right;
+        margin-right: @espacamento;
+        margin-bottom: @espacamento;
+        padding: @espacamento;
+        position: relative;
 
-    /* triângulo */
-    border-top: 10px solid #333;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
+        // Estilos
+        background-color: @cor-principal;
+        border: 0;
+        border-radius: @raio-borda;
+        box-shadow: @sombra-botao;
+        color: @cor-texto;
+        font-size: 1em;
+        text-decoration: none;
+        text-shadow: 1px 0 1px black;
 
-    /* posicionamento */
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
+        .transicao(all, 0.7s);
 
-    /* animação */
-    transition: 0.3s;
-}
+        &::after {
+            content: '';
+            display: block;
+            height: 0;
+            width: 0;
 
-.painel button:hover::after {
-    border-top-color: #393939;
-}
+            border-top: 10px solid @cor-principal;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
 
-.painel button:hover {
-    background-color: #393939;
-    box-shadow: 1px 0 20px rgba(200, 200, 120, 0.9);
-}
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
 
-.painel li {
-    display: inline-block;
-    vertical-align: top;
-    width: 140px;
-    margin: 2px;
-    padding-bottom: 10px;
-    transition: 0.7s ease-out;
-}
+            .transicao(all, 0.7s);
+        }
 
-.painel li:hover {
-    background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 0 5px #333;
-    transition: 0.7s ease-in;
-    transform: scale(1.2) rotate(-5deg);
-}
+        &:hover {
+            background-color: @cor-hover;
+            box-shadow: @sombra-hover;
 
-.painel li:nth-child(2n):hover {
-    transform: scale(1.2) rotate(5deg);
-}
+            &::after {
+                border-top-color: @cor-hover;
+            }
+        }
+    }
 
-.painel-compacto li:nth-child(n+7) {
-    display: none;
-}
+    li {
+        display: inline-block;
+        vertical-align: top;
+        width: 140px;
+        margin: 2px;
+        padding-bottom: @espacamento;
+        .transicao(all, 0.7s);
 
-.painel-compacto button {
-    display: block;
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: @sombra-li;
+            .transicao(all, 0.7s, ease-in);
+            transform: scale(1.2) rotate(-5deg);
+        }
+
+        &:nth-child(2n):hover {
+            transform: scale(1.2) rotate(5deg);
+        }
+    }
+
+    &-compacto {
+        li:nth-child(n+7) {
+            display: none;
+        }
+
+        button {
+            display: block;
+        }
+    }
 }
 
 .tamanhos output {
@@ -237,27 +274,6 @@ header {
 .mais-vendidos {
     float: right;
     background-color: #dcdcf5;
-}
-
-.painel h2 {
-    font-family: 'Bad Script', sans-serif;
-    font-size: 24px;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-}
-
-.painel a {
-    color: #333;
-    font-size: 14px;
-    text-align: center;
-    text-decoration: none;
-}
-
-.painel h2::before {
-    content: '\2756';
-    padding-right: 5px;
-    opacity: 0.4;
 }
 
 footer {
@@ -347,7 +363,7 @@ footer .container {
 }
 
 .produto {
-    color: #333;
+    color: @cor-principal;
     line-height: 1.3;
     margin-top: 2em;
 }
@@ -391,7 +407,7 @@ footer .container {
     position: absolute;
     top: 30px;
     border: 6px solid rgba(0, 0, 0, 0);
-    transition: 1s;
+    .transicao(all, 0.7s);
 }
 
 .cores label:hover::after {
@@ -402,11 +418,11 @@ footer .container {
     display: none;
 }
 
-.cores input:checked + label::after {
+.cores input:checked+label::after {
     border: 6px solid rgba(0, 0, 0, 0.3);
 }
 
-.cores input:not(:checked) + label img {
+.cores input:not(:checked)+label img {
     display: none;
 }
 
@@ -428,7 +444,7 @@ label[for="azul"]::after {
 .comprar {
     background: #91bd3c;
     border: none;
-    color: #333;
+    color: @cor-principal;
     font-size: 1.4em;
     text-transform: uppercase;
     box-shadow: 0 1px 3px #777;
@@ -518,14 +534,14 @@ tr:nth-child(2n) {
 
     .painel {
         width: auto;
-    }
 
-    .painel li {
-        width: 30%;
-    }
+        li {
+            width: 30%;
+        }
 
-    .painel img {
-        width: 100%;
+        img {
+            width: 100%;
+        }
     }
 }
 

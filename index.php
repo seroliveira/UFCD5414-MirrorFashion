@@ -40,7 +40,7 @@ include("cabecalho.php");
 	</section> <!--fim .departamentos-->
 
 	<div class="img-destaques">
-		<img src="img/destaque-home.png" alt="Promoção: Big City Night">
+		<img src="img/destaque-home.jpg" alt="Promoção: Big City Night">
 		<button id="toggle">
 			<svg id="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white">
 				<!-- Ícone de pausa inicial -->
@@ -268,7 +268,7 @@ include("cabecalho.php");
 </section>
 
 <script src="js/jquery.js"></script>
-<script src="js/home.js"></script>
+<script src="js/main.js"></script>
 
 <!--rodapé-->
 <?php include("rodape.php"); ?>

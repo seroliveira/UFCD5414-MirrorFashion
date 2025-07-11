@@ -1,6 +1,5 @@
 <?php
 $cabecalho_title = "Produto da Mirror Fashion";
-$cabecalho_css = '<link rel="stylesheet" href="css/produto.css">';
 include("cabecalho.php"); ?>
 
 <div class="produto-back">
@@ -82,6 +81,6 @@ include("cabecalho.php"); ?>
 </div>
 
 <script src="js/jquery.js"></script>
-<script src="js/produto.js"></script>
+<script src="js/main.js"></script>
 
 <?php include("rodape.php"); ?>

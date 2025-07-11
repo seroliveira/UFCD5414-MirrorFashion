@@ -7,7 +7,7 @@
     <title><?php print $cabecalho_title; ?></title>
 
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet/less" href="less/estilos.less">
     <?php print @$cabecalho_css; ?>
 </head>
 
